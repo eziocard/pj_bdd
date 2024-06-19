@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href="./css/estilos.css">
+    <script src="https://kit.fontawesome.com/e7837afc12.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <div class = 'inicio'>
       <img src = "https://www.uautonoma.cl/content/themes/universidad-autonoma-theme/dist/images/global/logo.svg" alt="img_logo" height="250" width="250">
-      <h1>
+      <h1 id="Titulo">
 	 Bibliteca Universidad Autonoma
       </h1>
     </div>
-    <div>
-    <h2>Buscar Libro</h2>
-    <input type= 'buscar'>
+    <div class= "cuerpo">
+    <h2>
+        Buscar Libro
+        <i class="fa-solid fa-book"></i>
+    </h2>
+   
+    <form action="#">
+        <div class="itemform">
+            <label for="nombre">Ingresar Nombre</label>
+            <input type="text" id="nombre" name="nombre" minlength="2" maxlength="64" size="32" required>
+        </div>
+        <div class="itemform">
+            <input type="submit" name="boton" value="Buscar">
+        </div>
     </div>
+    </form>
 
 </body>
 </html

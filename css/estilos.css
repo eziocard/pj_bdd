@@ -3,29 +3,44 @@
     padding: 0;
 }
 body{
-    background-color: #dde0df;
+    background-color: white;
     font: 100 14px 'inter', sans-serif;
 }
 
-h1{
-   padding-top: 20px;
+h1,#Titulo{
+   margin-top: 100px;
+   margin-left: 20px;
    display: inline-block;
    vertical-align:top;   
+   font-size: 60px;
+   color: white;
 
 }
 .inicio{
-	margin-top:20px;
-	margin-left: 40px;
-
+	padding-top:20px;
+	padding-left: 40px;
+    background-color: gray;
 }
 h2{
 	padding-top:30px;
 	padding-left:63px;
 	text-size-adjust:30;
+    font-size: 30px;
+}
+label{
+    font-size: 20px;
+}
+form{
+    margin-top: 20px;
+	margin-left:63px;
 }
 input{
-	margin-left:63px;
-	padding-left:30px;
-	padding-right:30px;
-
+    margin-left: 10px
+}
+.itemform{
+    display: inline-block;
+   vertical-align:top;  
+}
+.itemform,input{
+    margin-top: 10px;
 }
