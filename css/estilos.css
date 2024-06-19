@@ -7,11 +7,25 @@ body{
     font: 100 14px 'inter', sans-serif;
 }
 
-nav{
-    position: fixed;
-    background-color: #685f57;
-    padding-left: 40px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 100%;
+h1{
+   padding-top: 20px;
+   display: inline-block;
+   vertical-align:top;   
+
+}
+.inicio{
+	margin-top:20px;
+	margin-left: 40px;
+
+}
+h2{
+	padding-top:30px;
+	padding-left:63px;
+	text-size-adjust:30;
+}
+input{
+	margin-left:63px;
+	padding-left:30px;
+	padding-right:30px;
+
 }
