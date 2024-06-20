@@ -20,17 +20,27 @@
         Buscar Libro
         <i class="fa-solid fa-book"></i>
     </h2>
-   
-    <form action="consulta.php">
-        <div class="itemform">
-            <label for="nombre">Ingresar Nombre</label>
-            <input type="text" id="nombre" name="nombre" minlength="2" maxlength="64" size="32">
-        </div>
-        <div class="itemform">
-            <input type="submit" name="boton" value="Buscar">
-        </div>
+    
+    <label for="nombre">Ingresar Nombre</label>
+    <input class="textfield" type="text" id="nombre" name="nombre" minlength="2" maxlength="64" size="32">
+    <button onclick='mostrar_tabla()'>Buscar</button>     
+    <button onclick='mostrar_tabla()'>Mostrar todo</button>    
     </div>
-    </form>
+    
+    <div class="tabla" id="resultados">
+        
+    </div>
+    
+    <script>
+        function mostrar_tabla() {
+            fetch('consulta.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('resultados').innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 
 </body>
 </html

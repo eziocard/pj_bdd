@@ -1,10 +1,7 @@
 <?php
 
-// Establecer conexión con la base de datos
 
-$db = mysqli_connect("localhost", "root", "200320", "Biblioteca");
-
-// Verificar la conexión
+$db = mysqli_connect("localhost","root","","concesionario");
 
 if (!$db) {
 
@@ -12,51 +9,60 @@ if (!$db) {
 
 }
 
-// Consulta SQL para obtener los clientes de Temuco
-
-$query = "SELECT * FROM libro";
-
+$query = "SELECT * FROM coches";
 $resultado = mysqli_query($db, $query);
-echo $resultado;
-
-// Verificar si la consulta fue exitosa
 
 if (!$resultado) {
 
     die("Error al ejecutar la consulta: " . mysqli_error($db));
 
 }
+echo "<h2>Listado de Clientes de TEMUCO</h2>";
 
-// Mostrar los datos en una tabla HTML
+echo "<table border='1'>";
 
-$db = mysqli_connect("localhost", "root", "200320", "Biblioteca");
+echo "<tr>
 
-// Verificar la conexión
+        <th>Matricula</th>
 
-if (!$db) {
+        <th>Tipo</th>
 
-    die("Error en la conexión: " . mysqli_connect_error());
+        <th>Marca</th>
 
-}
+        <th>Modelo</th>
 
-// Consulta SQL para obtener los clientes de Temuco
+        <th>ano</th>
 
-$query = "SELECT * FROM Clientes WHERE ciudad = 'Temuco'";
+        <th>Color</th>
 
-$resultado = mysqli_query($db, $query);
 
-// Verificar si la consulta fue exitosa
 
-if (!$resultado) {
+      </tr>";
 
-    die("Error al ejecutar la consulta: " . mysqli_error($db));
 
-}
+      while ($fila = mysqli_fetch_assoc($resultado)) {
 
-// Liberar el resultado
-
+        echo "<tr>";
+    
+        echo "<td>" . $fila['Matricula'] . "</td>";
+    
+        echo "<td>" . $fila['Tipo'] . "</td>";
+    
+        echo "<td>" . $fila['Marca'] . "</td>";
+    
+        echo "<td>" . $fila['Modelo'] . "</td>";
+    
+        echo "<td>" . $fila['ano'] . "</td>";
+    
+        echo "<td>" . $fila['Color'] . "</td>";
+    
+        echo "</tr>";
+    
+    }
+    
+    echo "</table>";
 mysqli_free_result($resultado);
 
-// Cerrar la conexión a la base de datos
 
-mysqli_close($db);
+?>
+

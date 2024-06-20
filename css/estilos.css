@@ -29,18 +29,14 @@ h2{
 }
 label{
     font-size: 20px;
+    margin-left: 63px;
+    
 }
-form{
-    margin-top: 20px;
-	margin-left:63px;
-}
+
 input{
     margin-left: 10px
 }
-.itemform{
-    display: inline-block;
-   vertical-align:top;  
-}
-.itemform,input{
-    margin-top: 10px;
+
+.tabla{
+    margin-left: 30px;
 }
