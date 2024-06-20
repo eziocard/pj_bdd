@@ -15,8 +15,9 @@
 	 Biblioteca Universidad Autonoma
       </h1>
     </div>
+    
     <div class= "cuerpo">
-    <h2>
+    <h2 id = titulo_buscar>
         Buscar Libro
         <i class="fa-solid fa-book"></i>
     </h2>
@@ -43,12 +44,17 @@
         }
         function buscar_matricula(){
             const matricula = document.getElementById('matricula').value;
+            if(matricula == ""){
+                alert("porfavor ingrese un dato");
+            }
+            else{
             fetch(`consulta.php?opcion=mostrar_matricula&matricula=${matricula}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('resultados').innerHTML = data;
                 })
                 .catch(error => console.error('Error:', error));
+            }
         }
 
     </script>
