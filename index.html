@@ -22,8 +22,8 @@
     </h2>
     
     <label for="nombre">Ingresar Nombre</label>
-    <input class="textfield" type="text" id="nombre" name="nombre" minlength="2" maxlength="64" size="32">
-    <button onclick='mostrar_tabla()'>Buscar</button>     
+    <input class="textfield" type="text" id="matricula" name="nombre" minlength="2" maxlength="64" size="32">
+    <button onclick="buscar_matricula()">Buscar</button>     
     <button onclick='mostrar_tabla()'>Mostrar todo</button>    
     </div>
     
@@ -32,16 +32,27 @@
     </div>
     
     <script>
+
         function mostrar_tabla() {
-            fetch('consulta.php')
+            fetch('consulta.php?opcion=mostrar_todo')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('resultados').innerHTML = data;
                 })
                 .catch(error => console.error('Error:', error));
         }
+        function buscar_matricula(){
+            const matricula = document.getElementById('matricula').value;
+            fetch(`consulta.php?opcion=mostrar_matricula&matricula=${matricula}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('resultados').innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
     </script>
 
 </body>
-</html
+</html>
 
