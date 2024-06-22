@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    font: 100 14px 'inter', sans-serif;
+}
+
+#titulo_buscar{ 
+	padding-top:30px;
+	padding-left:63px;
+    font-size: 30px;
+}
+label{
+    font-size: 20px;
+    margin-left: 63px;
+    
+}
+
+input{
+    margin-left: 10px
+}
+
+.tabla{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+

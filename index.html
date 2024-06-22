@@ -17,108 +17,16 @@
     </div>
 
     <nav>
-        <ul><button onclick = "buscar_prestamo()">Buscar prestamo</button></ul>
-        <ul><button onclick="buscar_cliente()">Buscar cliente</button></ul>
+        <a href="./buscar_prestamo.html" target="paginas">Buscar Prestamo</a>
+        <a href="./buscar_cliente.html" target="paginas">Buscar Cliente</a>
+        
     </nav>
     
-    <div id = "seleccion1">  
-    </div>
-    <div id = "seleccion2">  
-    </div>
+    <Main>
+        <iframe name= "paginas" src="" frameborder="0"></iframe>
+    </Main>
 
-   
     
-    <script>
-        var vtn_buscar_prestamo = false;
-        var vtn_buscar_cliente = false;
-
-        function buscar_prestamo(){
-            if(!vtn_buscar_prestamo){
-                var buscar_cliente = document.getElementById("seleccion2");
-                if (!buscar_cliente){
-                    var buscar_prestamo = document.createElement('div');
-                    buscar_prestamo.className = 'bus_prest';
-                    var cont = `<h2 id = titulo_buscar>
-                    Buscar Prestamo
-                    <i class="fa-solid fa-book"></i>
-                    </h2>
-                    
-                    <label for="nombre">Ingresar Codigo</label>
-                    <input class="textfield" type="text" id="id_prestamo" name="nombre" minlength="2" maxlength="64" size="32">
-                    <button onclick="mostrar_prestamo()">Buscar</button>     
-                    <button onclick='m_todo()'>Mostrar todo</button>
-                    </div>
-                    
-                    <div class="tabla" id="resultados"></div>`;
-                    
-                    buscar_prestamo.innerHTML = cont;
-                    var seleccion = document.getElementById("seleccion1");
-                    seleccion.append(buscar_prestamo);
-                    vtn_buscar_prestamo = true;
-                    
-                    
-                } else {
-                    buscar_cliente.remove();
-                    
-            }    
-        } 
-      
-    }
-        
-        function buscar_cliente(){
-            
-            if(!vtn_buscar_cliente){
-                var buscar_prestamo = document.getElementById('seleccion1');
-                if (!buscar_prestamo){     
-                    var buscar_cliente = document.createElement('div');
-                    buscar_cliente.className = 'bus_cliente';
-                    var cont = `
-                    <h2 id = titulo_buscar> Buscar Cliente </h2>
-                    <label for= "rut">Rut</label>
-                    <input class = "textfield" type= "text" id = "rut" name = "rut" minlength = "2" maxlenght = "64" size = "32">
-                    <button onclick = "asdasdasdasd">Buscar</button>
-                    </div>
-                    <div class="tabla" id="resultados"></div>`;       
-                    buscar_cliente.innerHTML = cont;
-                    var seleccion = document.getElementById("seleccion2");
-                    seleccion.append(buscar_cliente);
-                
-                    vtn_buscar_cliente = true;  
-                    
-                } else {
-                    buscar_prestamo.remove();
-                }
-                        
-            
-        }
-    
-    }
-
-        function m_todo() {
-            fetch('consulta_prestamo.php?opcion=mostrar_todo')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('resultados').innerHTML = data;
-                })
-                .catch(error => console.error('Error:', error));
-        }
-        function mostrar_prestamo(){
-            const id_prestamo = document.getElementById('id_prestamo').value;
-            if(id_prestamo == ""){
-                alert("porfavor ingrese un dato");
-            }
-            else{
-            fetch(`consulta_prestamo.php?opcion=mostrar_prestamo&id_prestamo=${id_prestamo}`)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('resultados').innerHTML = data;
-
-                })
-                .catch(error => console.error('Error:', error));
-            }
-        }
-
-    </script>
 
 </body>
 </html>
