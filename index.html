@@ -18,12 +18,12 @@
     
     <div class= "cuerpo">
     <h2 id = titulo_buscar>
-        Buscar Libro
+        Buscar Prestamo
         <i class="fa-solid fa-book"></i>
     </h2>
     
     <label for="nombre">Ingresar Nombre</label>
-    <input class="textfield" type="text" id="matricula" name="nombre" minlength="2" maxlength="64" size="32">
+    <input class="textfield" type="text" id="id_prestamo" name="nombre" minlength="2" maxlength="64" size="32">
     <button onclick="buscar_matricula()">Buscar</button>     
     <button onclick='mostrar_tabla()'>Mostrar todo</button>    
     </div>
@@ -43,12 +43,12 @@
                 .catch(error => console.error('Error:', error));
         }
         function buscar_matricula(){
-            const matricula = document.getElementById('matricula').value;
-            if(matricula == ""){
+            const id_prestamo = document.getElementById('id_prestamo').value;
+            if(id_prestamo == ""){
                 alert("porfavor ingrese un dato");
             }
             else{
-            fetch(`consulta.php?opcion=mostrar_matricula&matricula=${matricula}`)
+            fetch(`consulta.php?opcion=mostrar_prestamo&id_prestamo=${id_prestamo}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('resultados').innerHTML = data;
