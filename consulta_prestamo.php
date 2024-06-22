@@ -9,10 +9,10 @@ if (!$db) {
 
 }
 
-
 if (isset($_GET['opcion'])) {
     $opcion = $_GET['opcion'];
 }
+
 
 
 
@@ -84,6 +84,8 @@ if (isset($_GET['opcion'])) {
         echo "</table>";
         mysqli_free_result($resultado);
     }
+    
+    
     
 ?>
 

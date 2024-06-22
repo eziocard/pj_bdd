@@ -7,35 +7,57 @@ body{
     font: 100 14px 'inter', sans-serif;
 }
 
+nav{
+    background-color:black;
+    width: 100%;
+    
+    
+}
+nav,ul{
+    display:inline-block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
 
-
-h1,#Titulo{
-   margin-top: 100px;
-   margin-left: 20px;
-   display: inline-block;
-   vertical-align:top;   
-   font-size: 60px;
-   color: white;
 
 }
+nav ul button{
+    border: none;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+}
+
+
 .inicio{
 	padding-top:20px;
 	padding-left: 40px;
     background-color: gray;
 }
-h2{
+#Titulo{
+    margin-top: 100px;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align:top;   
+    font-size: 60px;
+    color: white;
+ 
+ }
+.bus_prest #titulo_buscar{ 
 	padding-top:30px;
 	padding-left:63px;
-	text-size-adjust:30;
     font-size: 30px;
 }
-label{
+.bus_prest label{
     font-size: 20px;
     margin-left: 63px;
     
 }
 
-input{
+.bus_prest input{
     margin-left: 10px
 }
 
