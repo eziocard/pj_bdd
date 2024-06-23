@@ -12,8 +12,26 @@
     <h2 id = titulo_buscar> Buscar Cliente </h2>
     <label for= "rut">Ingresar Rut</label>
     <input class = "textfield" type= "text" id = "rut" name = "rut" minlength = "2" maxlenght = "64" size = "32">
-    <button onclick = "asdasdasdasd">Buscar</button>
+    <button onclick = "mostrar_cliente()">Buscar</button>
     </div>
-    <div class="tabla" id="resultados"></div>`;     
+    <div class="tabla" id="resultados"></div>`;   
+    
+    <script>
+        function mostrar_cliente() {
+    const rut = document.getElementById("rut").value; 
+
+
+    fetch(`consulta_cliente.php?rut=${rut}`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('resultados').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+
+
+        
+    </script>
 </body>
 </html>
