@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="./css/estilos_hp.css">
+</head>
+<body>
+   
+    <div class="menu">
+        
+        <div id = "agregar_cliente">
+            <h2>Ingresar Datos del Cliente</h2>
+                <form id = box>
+                <div id = textos>
+                    <label for="Buscar">Rut</label>
+                    <label for="Buscar">Nombre</label>
+                    <label for="Buscar">Facultad</label>
+                    <label for="Buscar">Carrera</label>
+                </div>        
+                <div id = "texfields">
+                    <input type="text" name = "rut" placeholder="rut">
+                    <input type="text" name = "nombre" placeholder="nombre">
+                    <input type="text" name = "facultad" placeholder="facultad">
+                    <input type="text" name = "carrera" placeholder="carrera">
+                </div>    
+                </form>
+                  
+                   
+               
+                <input type = "submit" name="registro">
+
+
+            
+        </div>
+        <br>
+        <div id = "buscar_libro">
+            <h2>Seleccionar Libro</h2>
+            <form action="consultas_hacer_prestamo.php" id = "bs_libro">
+                <label for="Buscar">Buscar</label>
+                <input type="text" name = "nombre_libro">
+                <button>Buscar</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

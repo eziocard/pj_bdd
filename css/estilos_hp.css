@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    font: 100 14px 'inter', sans-serif;
+}
+.menu{
+    display: flex;
+}
+h2{
+    color: black;
+}
+#agregar_cliente{
+    background-color: white;
+    width: 50%;
+    margin-left: 0;
+    color: black;
+   
+}
+#box{
+    display: flex;
+    flex-direction: row;
+}
+#textos{
+    display: flex;
+    flex-direction: column;
+    
+}
+#texfields{
+    display: flex;
+    flex-direction: column;
+    
+}
+#box #textos label{
+    margin-top: 7px;
+    margin-right: 10px;
+}
+#box #texfields input{
+    margin-top: 4px;
+}
+
+#buscar_libro{
+    background-color: white;
+    width: 50%;
+    padding-left: 10px;
+    
+}
+
+#buscar_libro #bs_libro{
+    display: flex;
+    flex-direction: row;
+
+}
+

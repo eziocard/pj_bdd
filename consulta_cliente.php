@@ -48,7 +48,7 @@ if (mysqli_num_rows($resultado) > 0) {
 
     $data .= "</table>";
 } else {
-    $data = "<h2>Cliente no encontrado.</h2>";
+    $data = "<h2>El Cliente no ha hecho ningun Prestamo o no a sido ingresado en la base de datos.</h2>";
 }
 
 echo $data;
