@@ -12,8 +12,8 @@
     <div class="menu">
         <div id="formulario">
 
-            <form action="prestamo.php" method="post">
-                <label for="rut">seleccionar plazo maximo: </label>
+            <form action="/cons_hacer_prestamo/prestamo.php" method="post" id = "hacer_prestamo">
+                <label for="rut">Rut: </label>
                 <input type="rut" id="rut" name="rut">
                 <br>
                 <label for="fecha">seleccionar plazo maximo: </label>
@@ -75,6 +75,16 @@
                     success: function(response) {
                         $('#resultado').html(response);
                     }
+                });
+            });
+            $('#hacer_prestamo').submit(function(e) {
+                e.preventDefault()
+                var datos = $(this).serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/cons_hacer_prestamo/prestamo.php',
+                    data: datos,
                 });
             });
         </script>
