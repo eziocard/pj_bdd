@@ -7,44 +7,25 @@
     <link rel = "stylesheet" href="./css/estilos_hp.css">
 </head>
 <body>
-   
-    <div class="menu">
-        
-        <div id = "agregar_cliente">
-            <h2>Ingresar Datos del Cliente</h2>
-                <form id = box>
-                <div id = textos>
-                    <label for="Buscar">Rut</label>
-                    <label for="Buscar">Nombre</label>
-                    <label for="Buscar">Facultad</label>
-                    <label for="Buscar">Carrera</label>
-                </div>        
-                <div id = "texfields">
-                    <input type="text" name = "rut" placeholder="rut">
-                    <input type="text" name = "nombre" placeholder="nombre">
-                    <input type="text" name = "facultad" placeholder="facultad">
-                    <input type="text" name = "carrera" placeholder="carrera">
-                </div>    
-                </form>
-                  
-                   
-               
-                <input type = "submit" name="registro">
+   <h2>Hacer Prestamo</h2>
+   <form action="prestamo.php" method="post">
+    <label for="rut">Ingresar Rut: </label>
+    <input type="text" name="rut" id = "rut">
+    <br>
+    <label for="nombre">Ingresar Nombre: </label>
+    <input type="text" name="nombre" id = "nombre">
+    <br>
+    <label for="apellido">Ingresar apellido</label>
+    <input type="text" name="apellido" id = "apellido">
+    <br>
+    <label for="facultad">Ingresar Facultad: </label>
+    <input type="text" name="facultad" id = "facultad">
+    <br>
+    <label for="carrera">Ingresar Carrera: </label>
+    <input type="text" name="carrera" id = "carrera">
 
 
-            
-        </div>
-        <br>
-        <div id = "buscar_libro">
-            <h2>Seleccionar Libro</h2>
-            <form action="consultas_hacer_prestamo.php" id = "bs_libro">
-                <label for="Buscar">Buscar</label>
-                <input type="text" name = "nombre_libro">
-                <button>Buscar</button>
-
-            </form>
-        </div>
-    </div>
+   </form>
 
 </body>
 </html>
