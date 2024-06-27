@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2024 a las 00:14:45
+-- Tiempo de generación: 27-06-2024 a las 23:36:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -126,120 +126,6 @@ INSERT INTO `autor` (`id_autor`, `nombre`, `apellido`) VALUES
 (86, 'Carmen Berenguer', NULL),
 (87, 'Alejandra Pizarnik', NULL),
 (88, 'Roberto Bolaño', NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cliente`
---
-
-CREATE TABLE `cliente` (
-  `rut` varchar(30) DEFAULT NULL,
-  `nombre` varchar(30) DEFAULT NULL,
-  `facultad` varchar(30) DEFAULT NULL,
-  `carrera` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`rut`, `nombre`, `facultad`, `carrera`) VALUES
-('12345678-9', 'Juan Pérez', 'Ingeniería', 'Civil'),
-('87654321-0', 'María Gómez', 'Medicina', 'Enfermería'),
-('11223344-5', 'Carlos Soto', 'Derecho', 'Abogacía'),
-('99887766-4', 'Ana López', 'Economía', 'Finanzas'),
-('12345679-5', 'Pedro Martínez', 'Ciencias', 'Biología'),
-('23456789-0', 'Laura Hernández', 'Ingeniería', 'Informática'),
-('34567890-1', 'José Ramírez', 'Artes', 'Música'),
-('45678901-2', 'Claudia Torres', 'Medicina', 'Odontología'),
-('56789012-3', 'Francisco Silva', 'Derecho', 'Abogacía'),
-('67890123-4', 'Carmen Vega', 'Economía', 'Administración'),
-('78901234-5', 'Luis Morales', 'Ingeniería', 'Eléctrica'),
-('89012345-6', 'Andrea Rojas', 'Ciencias', 'Física'),
-('90123456-7', 'Manuel Díaz', 'Artes', 'Pintura'),
-('01234567-8', 'Isabel Castillo', 'Medicina', 'Kinesiología'),
-('12345680-9', 'Roberto Fuentes', 'Derecho', 'Notaría'),
-('23456780-0', 'Mónica Bravo', 'Economía', 'Contabilidad'),
-('34567891-1', 'Hugo Aguilar', 'Ingeniería', 'Industrial'),
-('45678912-2', 'Patricia Reyes', 'Ciencias', 'Matemáticas'),
-('56789023-3', 'Daniel González', 'Artes', 'Teatro'),
-('67890134-4', 'Rosa Soto', 'Medicina', 'Enfermería'),
-('78901245-5', 'Miguel Valdés', 'Derecho', 'Abogacía'),
-('89012356-6', 'Elena Figueroa', 'Economía', 'Marketing'),
-('90123467-7', 'Juan Carlos Herrera', 'Ingeniería', 'Química'),
-('01234578-8', 'María Teresa Méndez', 'Ciencias', 'Química'),
-('12345689-9', 'Carlos Eduardo Espinoza', 'Artes', 'Escultura'),
-('23456790-0', 'Ana Isabel Bustos', 'Medicina', 'Fisioterapia'),
-('34567890-2', 'Jorge Luis Vargas', 'Derecho', 'Criminología'),
-('45678901-3', 'Liliana Ortiz', 'Economía', 'Empresariales'),
-('56789012-4', 'Pablo García', 'Ingeniería', 'Civil'),
-('67890123-5', 'Catalina Mendoza', 'Ciencias', 'Biología'),
-('78901234-6', 'Esteban Ruiz', 'Artes', 'Fotografía'),
-('89012345-7', 'Gabriela Sáez', 'Medicina', 'Nutrición'),
-('90123456-8', 'Felipe Castillo', 'Derecho', 'Notaría'),
-('01234567-9', 'Paula Morales', 'Economía', 'Finanzas'),
-('12345670-1', 'José Luis Vidal', 'Ingeniería', 'Informática'),
-('23456781-2', 'Verónica Paredes', 'Ciencias', 'Física'),
-('34567892-3', 'Francisca Cáceres', 'Artes', 'Música'),
-('45678903-4', 'Diego Fernández', 'Medicina', 'Odontología'),
-('56789014-5', 'Natalia Jiménez', 'Derecho', 'Abogacía'),
-('67890125-6', 'Rodrigo Guzmán', 'Economía', 'Administración'),
-('78901236-7', 'Valeria Quintana', 'Ingeniería', 'Eléctrica'),
-('89012347-8', 'Ignacio Navarrete', 'Ciencias', 'Química'),
-('90123458-9', 'Camila Riquelme', 'Artes', 'Pintura'),
-('01234569-0', 'Sebastián Vergara', 'Medicina', 'Kinesiología'),
-('12345671-1', 'Antonia Toledo', 'Derecho', 'Notaría'),
-('23456782-2', 'Martín Campos', 'Economía', 'Contabilidad'),
-('34567893-3', 'Rafael Bustamante', 'Ingeniería', 'Industrial'),
-('45678904-4', 'Josefa Robles', 'Ciencias', 'Matemáticas'),
-('56789015-5', 'Álvaro Sepúlveda', 'Artes', 'Teatro'),
-('67890126-6', 'Florencia Pino', 'Medicina', 'Enfermería'),
-('78901237-7', 'Vicente Salinas', 'Derecho', 'Abogacía'),
-('89012348-8', 'Ana María Yáñez', 'Economía', 'Marketing'),
-('90123459-9', 'Benjamín Castillo', 'Ingeniería', 'Química'),
-('01234560-0', 'Catalina González', 'Ciencias', 'Química'),
-('12345672-1', 'Mariana Reyes', 'Artes', 'Escultura'),
-('23456783-2', 'Andrés Ortiz', 'Medicina', 'Fisioterapia'),
-('34567894-3', 'Laura Carrasco', 'Derecho', 'Criminología'),
-('45678905-4', 'Diego Pérez', 'Economía', 'Empresariales'),
-('56789016-5', 'Elisa Ramírez', 'Ingeniería', 'Civil'),
-('67890127-6', 'Gonzalo Vega', 'Ciencias', 'Biología'),
-('78901238-7', 'Ricardo Lara', 'Artes', 'Fotografía'),
-('89012349-8', 'Daniela Herrera', 'Medicina', 'Nutrición'),
-('90123460-9', 'Francisco Espinoza', 'Derecho', 'Notaría'),
-('01234571-0', 'Lucía Paredes', 'Economía', 'Finanzas'),
-('12345673-1', 'Esteban Vargas', 'Ingeniería', 'Informática'),
-('23456784-2', 'Andrea Ruiz', 'Ciencias', 'Física'),
-('34567895-3', 'Manuel Fuentes', 'Artes', 'Música'),
-('45678906-4', 'Catalina Valenzuela', 'Medicina', 'Odontología'),
-('56789017-5', 'Matías Fernández', 'Derecho', 'Abogacía'),
-('67890128-6', 'Valentina Soto', 'Economía', 'Administración'),
-('78901239-7', 'Fernando Orellana', 'Ingeniería', 'Eléctrica'),
-('89012350-8', 'Sofía Castro', 'Ciencias', 'Química'),
-('90123461-9', 'Carlos Vidal', 'Artes', 'Pintura'),
-('01234572-0', 'Fernanda Peña', 'Medicina', 'Kinesiología'),
-('12345674-1', 'Claudio Méndez', 'Derecho', 'Notaría'),
-('23456785-2', 'Gloria Herrera', 'Economía', 'Contabilidad'),
-('34567896-3', 'Javier Molina', 'Ingeniería', 'Industrial'),
-('45678907-4', 'Marta Sandoval', 'Ciencias', 'Matemáticas'),
-('56789018-5', 'Tomás Aravena', 'Artes', 'Teatro'),
-('67890129-6', 'Karina Soto', 'Medicina', 'Enfermería'),
-('78901240-7', 'Mario Leiva', 'Derecho', 'Abogacía'),
-('89012351-8', 'Loreto Díaz', 'Economía', 'Marketing'),
-('90123462-9', 'Rodrigo Morales', 'Ingeniería', 'Química'),
-('01234573-0', 'Francisco Olivares', 'Ciencias', 'Química'),
-('12345675-1', 'Javiera Fuentes', 'Artes', 'Escultura'),
-('23456786-2', 'Mauricio Pérez', 'Medicina', 'Fisioterapia'),
-('34567897-3', 'Carmen Cabrera', 'Derecho', 'Criminología'),
-('45678908-4', 'Vicente Pizarro', 'Economía', 'Empresariales'),
-('56789019-5', 'Sebastián Valdés', 'Ingeniería', 'Civil'),
-('67890130-6', 'Alicia Gutiérrez', 'Ciencias', 'Biología'),
-('78901241-7', 'Ricardo Miranda', 'Artes', 'Fotografía'),
-('89012352-8', 'Ángela Rivas', 'Medicina', 'Nutrición'),
-('90123463-9', 'Gabriel Figueroa', 'Derecho', 'Notaría'),
-('01234574-0', 'Josefina Torres', 'Economía', 'Finanzas'),
-('12345676-1', 'Cristóbal Lara', 'Ingeniería', 'Informática');
 
 -- --------------------------------------------------------
 
@@ -480,6 +366,20 @@ INSERT INTO `ejemplar` (`id_ejemplar`, `isbn`, `precio`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `estudiante`
+--
+
+CREATE TABLE `estudiante` (
+  `rut` varchar(30) DEFAULT NULL,
+  `nombre` varchar(30) DEFAULT NULL,
+  `Apellido` varchar(30) NOT NULL,
+  `facultad` varchar(30) DEFAULT NULL,
+  `carrera` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `libro`
 --
 
@@ -602,64 +502,6 @@ CREATE TABLE `prestamo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `prestamo`
---
-
-INSERT INTO `prestamo` (`id_prestamo`, `id_ejemplar`, `rut`, `fecha_prestamo`, `fecha_devolucion`, `fecha_prevista`) VALUES
-(1, 'J001', '12345678-9', '2023-06-15', '2023-07-15', '2023-07-22'),
-(2, 'J002', '87654321-0', '2023-06-15', '2023-07-15', '2023-07-22'),
-(3, 'J003', '11223344-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(4, 'J004', '99887766-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(5, 'J005', '12345679-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(6, 'J006', '23456789-0', '2023-06-15', '2023-07-15', '2023-07-22'),
-(7, 'J007', '34567890-1', '2023-06-15', '2023-07-15', '2023-07-22'),
-(8, 'J008', '45678901-2', '2023-06-15', '2023-07-15', '2023-07-22'),
-(9, 'J009', '56789012-3', '2023-06-15', '2023-07-15', '2023-07-22'),
-(10, 'J010', '67890123-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(11, 'J011', '78901234-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(12, 'J012', '89012345-6', '2023-06-15', '2023-07-15', '2023-07-22'),
-(13, 'J013', '90123456-7', '2023-06-15', '2023-07-15', '2023-07-22'),
-(14, 'J014', '01234567-8', '2023-06-15', '2023-07-15', '2023-07-22'),
-(15, 'J015', '12345680-9', '2023-06-15', '2023-07-15', '2023-07-22'),
-(16, 'J016', '23456780-0', '2023-06-15', '2023-07-15', '2023-07-22'),
-(17, 'J017', '34567891-1', '2023-06-15', '2023-07-15', '2023-07-22'),
-(18, 'J018', '45678912-2', '2023-06-15', '2023-07-15', '2023-07-22'),
-(19, 'J019', '56789023-3', '2023-06-15', '2023-07-15', '2023-07-22'),
-(20, 'J020', '67890134-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(21, 'J021', '78901245-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(22, 'J022', '89012356-6', '2023-06-15', '2023-07-15', '2023-07-22'),
-(23, 'J023', '90123467-7', '2023-06-15', '2023-07-15', '2023-07-22'),
-(24, 'J024', '01234578-8', '2023-06-15', '2023-07-15', '2023-07-22'),
-(25, 'J025', '12345670-1', '2023-06-15', '2023-07-15', '2023-07-22'),
-(26, 'J026', '23456781-2', '2023-06-15', '2023-07-15', '2023-07-22'),
-(27, 'J027', '34567892-3', '2023-06-15', '2023-07-15', '2023-07-22'),
-(28, 'J028', '45678903-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(29, 'J029', '56789014-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(30, 'J030', '67890125-6', '2023-06-15', '2023-07-15', '2023-07-22'),
-(31, 'J031', '78901236-7', '2023-06-15', '2023-07-15', '2023-07-22'),
-(32, 'J032', '89012347-8', '2023-06-15', '2023-07-15', '2023-07-22'),
-(33, 'J033', '90123458-9', '2023-06-15', '2023-07-15', '2023-07-22'),
-(34, 'J034', '01234569-0', '2023-06-15', '2023-07-15', '2023-07-22'),
-(35, 'J035', '12345671-1', '2023-06-15', '2023-07-15', '2023-07-22'),
-(36, 'J036', '23456782-2', '2023-06-15', '2023-07-15', '2023-07-22'),
-(37, 'J037', '34567893-3', '2023-06-15', '2023-07-15', '2023-07-22'),
-(38, 'J038', '45678904-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(39, 'J039', '56789015-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(40, 'J040', '67890126-6', '2023-06-15', '2023-07-15', '2023-07-22'),
-(41, 'J041', '78901237-7', '2023-06-15', '2023-07-15', '2023-07-22'),
-(42, 'J042', '89012348-8', '2023-06-15', '2023-07-15', '2023-07-22'),
-(43, 'J043', '90123459-9', '2023-06-15', '2023-07-15', '2023-07-22'),
-(44, 'J044', '01234560-0', '2023-06-15', '2023-07-15', '2023-07-22'),
-(45, 'J045', '12345672-1', '2023-06-15', '2023-07-15', '2023-07-22'),
-(46, 'J046', '23456783-2', '2023-06-15', '2023-07-15', '2023-07-22'),
-(47, 'J047', '34567894-3', '2023-06-15', '2023-07-15', '2023-07-22'),
-(48, 'J048', '45678905-4', '2023-06-15', '2023-07-15', '2023-07-22'),
-(49, 'J049', '56789016-5', '2023-06-15', '2023-07-15', '2023-07-22'),
-(50, 'J050', '67890127-6', '2023-06-15', '2023-07-15', '2023-07-22'),
-(51, 'J051', '78901238-7', '2023-06-15', '2023-07-15', '2023-07-22'),
-(52, 'J052', '89012349-8', '2023-06-15', '2023-07-15', '2023-07-22');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -668,12 +510,6 @@ INSERT INTO `prestamo` (`id_prestamo`, `id_ejemplar`, `rut`, `fecha_prestamo`, `
 --
 ALTER TABLE `autor`
   ADD KEY `Pk` (`id_autor`);
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD KEY `Pk` (`rut`);
 
 --
 -- Indices de la tabla `editorial`
@@ -687,6 +523,12 @@ ALTER TABLE `editorial`
 ALTER TABLE `ejemplar`
   ADD KEY `Pk` (`id_ejemplar`),
   ADD KEY `Fk` (`isbn`);
+
+--
+-- Indices de la tabla `estudiante`
+--
+ALTER TABLE `estudiante`
+  ADD KEY `Pk` (`rut`);
 
 --
 -- Indices de la tabla `libro`
@@ -734,7 +576,7 @@ ALTER TABLE `libro`
 --
 ALTER TABLE `prestamo`
   ADD CONSTRAINT `prestamo_ibfk_1` FOREIGN KEY (`id_ejemplar`) REFERENCES `ejemplar` (`id_ejemplar`),
-  ADD CONSTRAINT `prestamo_ibfk_2` FOREIGN KEY (`rut`) REFERENCES `cliente` (`rut`);
+  ADD CONSTRAINT `prestamo_ibfk_2` FOREIGN KEY (`rut`) REFERENCES `estudiante` (`rut`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

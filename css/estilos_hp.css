@@ -12,45 +12,7 @@ body{
 h2{
     color: black;
 }
-#agregar_cliente{
-    background-color: white;
+#formulario,#buscar_libro{
     width: 50%;
-    margin-left: 0;
-    color: black;
-   
-}
-#box{
-    display: flex;
-    flex-direction: row;
-}
-#textos{
-    display: flex;
-    flex-direction: column;
-    
-}
-#texfields{
-    display: flex;
-    flex-direction: column;
-    
-}
-#box #textos label{
-    margin-top: 7px;
-    margin-right: 10px;
-}
-#box #texfields input{
-    margin-top: 4px;
-}
-
-#buscar_libro{
-    background-color: white;
-    width: 50%;
-    padding-left: 10px;
-    
-}
-
-#buscar_libro #bs_libro{
-    display: flex;
-    flex-direction: row;
-
 }
 

@@ -5,27 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href="./css/estilos_hp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-   <h2>Hacer Prestamo</h2>
-   <form action="prestamo.php" method="post">
-    <label for="rut">Ingresar Rut: </label>
-    <input type="text" name="rut" id = "rut">
-    <br>
-    <label for="nombre">Ingresar Nombre: </label>
-    <input type="text" name="nombre" id = "nombre">
-    <br>
-    <label for="apellido">Ingresar apellido</label>
-    <input type="text" name="apellido" id = "apellido">
-    <br>
-    <label for="facultad">Ingresar Facultad: </label>
-    <input type="text" name="facultad" id = "facultad">
-    <br>
-    <label for="carrera">Ingresar Carrera: </label>
-    <input type="text" name="carrera" id = "carrera">
+    <h2>Hacer Prestamo</h2>
+    <div class="menu">
+        <div id="formulario">
 
+            <form action="prestamo.php" method="post">
+                <label for="rut">Ingresar Rut: </label>
+                <input type="text" name="rut" id = "rut">
+                <br>
+                <label for="nombre">Ingresar Nombre: </label>
+                <input type="text" name="nombre" id = "nombre">
+                <br>
+                <label for="apellido">Ingresar apellido</label>
+                <input type="text" name="apellido" id = "apellido">
+                <br>
+                <label for="facultad">Ingresar Facultad: </label>
+                <input type="text" name="facultad" id = "facultad">
+                <br>
+                <label for="carrera">Ingresar Carrera: </label>
+                <input type="text" name="carrera" id = "carrera">
+                <br>
+                <button></button>
 
-   </form>
+              </form>
+        </div>
+        <div id = "buscar_libro">
+            <h2>Seleccionar Libro</h2>
+            <form action="cons_hacer_prestamo/buscar_libro.php" id = "bs_libro">
+                <label for="Buscar">Ingresar id del ejemplar</label>
+                <input type="text" name = "titulo">
+                <button>Buscar</button>
+            </form>
+
+            <form action="cons_hacer_prestamo/m_t_libros.php" id = "m_libros">
+                <button>Mostrar todo</button>
+            </form>
+
+            <div id="resultado"> </div>
+        </div>
+
+        <script>
+             $(function() {
+                $('#m_libros').submit(function(e) {
+                    e.preventDefault(); 
+                    var datos = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'cons_hacer_prestamo/m_t_libros.php', 
+                        data: datos,
+                        success: function(response) {
+                            $('#resultado').html(response); 
+                        }
+                    });
+                });
+            });
+
+            $('#bs_libro').submit(function(e) {
+                e.preventDefault();
+                var datos = $(this).serialize();
+                
+                $.ajax({
+                    type: 'POST',
+                    url: 'cons_hacer_prestamo/buscar_libro.php',
+                    data: formData,
+                    success: function(response) {
+                        $('#resultado').html(response);
+                    }
+                });
+            });
+        </script>
+</div>
+
 
 </body>
 </html>
