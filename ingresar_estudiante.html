@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <div id="formulario">
+
+            <form action="cons_ingresar_est/ingresar_est.php" method="post" id = "ing_est">
+                <label for="rut">Ingresar Rut: </label>
+                <input type="text" name="rut" id = "rut">
+                <br>
+                <label for="nombre">Ingresar Nombre: </label>
+                <input type="text" name="nombre" id = "nombre">
+                <br>
+                <label for="apellido">Ingresar apellido: </label>
+                <input type="text" name="apellido" id = "apellido">
+                <br>
+                <label for="facultad">Ingresar Facultad: </label>
+                <input type="text" name="facultad" id = "facultad">
+                <br>
+                <label for="carrera">Ingresar Carrera: </label>
+                <input type="text" name="carrera" id = "carrera">
+                <br>
+
+                <button>Ingresar</button>
+              </form>
+              <div id="resultado"> </div>
+        </div>
+
+        <script>
+            $(function() {
+               $('#ing_est').submit(function(e) {
+                   e.preventDefault(); 
+                   var datos = $(this).serialize();
+                   $.ajax({
+                       type: 'POST',
+                       url: "cons_ingresar_est/ingresar_est.php", 
+                       data: datos,
+                       success: function(response) {
+                           $('#resultado').html(response); 
+                       }
+                   });
+               });
+           });
+        </script>
+</body>
+</html>

@@ -13,35 +13,30 @@
         <div id="formulario">
 
             <form action="prestamo.php" method="post">
-                <label for="rut">Ingresar Rut: </label>
-                <input type="text" name="rut" id = "rut">
+                <label for="rut">seleccionar plazo maximo: </label>
+                <input type="rut" id="rut" name="rut">
                 <br>
-                <label for="nombre">Ingresar Nombre: </label>
-                <input type="text" name="nombre" id = "nombre">
+                <label for="fecha">seleccionar plazo maximo: </label>
+                <input type="date" id="fecha" name="fecha">
                 <br>
-                <label for="apellido">Ingresar apellido</label>
-                <input type="text" name="apellido" id = "apellido">
+                <label for="id_ejemplar">Ingresar id del ejemplar: </label>
+                <input type="text" id="id_ejemplar" name="id_ejemplar">
                 <br>
-                <label for="facultad">Ingresar Facultad: </label>
-                <input type="text" name="facultad" id = "facultad">
-                <br>
-                <label for="carrera">Ingresar Carrera: </label>
-                <input type="text" name="carrera" id = "carrera">
-                <br>
-                <button></button>
+                <button>Hacer prestamo</button>
+
 
               </form>
         </div>
         <div id = "buscar_libro">
             <h2>Seleccionar Libro</h2>
             <form action="cons_hacer_prestamo/buscar_libro.php" id = "bs_libro">
-                <label for="Buscar">Ingresar id del ejemplar</label>
+                <label for="Buscar">Ingresar titulo</label>
                 <input type="text" name = "titulo">
                 <button>Buscar</button>
             </form>
 
             <form action="cons_hacer_prestamo/m_t_libros.php" id = "m_libros">
-                <button>Mostrar todo</button>
+                <button>Mostrar Disponibles</button>
             </form>
 
             <div id="resultado"> </div>
@@ -65,12 +60,18 @@
 
             $('#bs_libro').submit(function(e) {
                 e.preventDefault();
+
+                var titulo = $('#bs_libro input[name=titulo]').val().trim(); 
+                if (titulo === '') {
+                    alert('Por favor ingresa el título del libro.');
+                    return; 
+}
                 var datos = $(this).serialize();
-                
+
                 $.ajax({
                     type: 'POST',
                     url: 'cons_hacer_prestamo/buscar_libro.php',
-                    data: formData,
+                    data: datos,
                     success: function(response) {
                         $('#resultado').html(response);
                     }

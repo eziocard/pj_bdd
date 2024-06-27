@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2024 a las 23:36:59
+-- Tiempo de generación: 28-06-2024 a las 00:51:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,15 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdd`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `crearEstudiante` (`nRut` VARCHAR(30), `nNombre` VARCHAR(30), `nApellido` VARCHAR(30), `nFacultad` VARCHAR(30), `nCarrera` VARCHAR(30))   Insert into estudiante (rut,nombre,apellido,facultad,carrera)
+VALUES (nRut,nNombre,nApellido,nFacultad,nCarrera)$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -376,6 +385,13 @@ CREATE TABLE `estudiante` (
   `facultad` varchar(30) DEFAULT NULL,
   `carrera` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estudiante`
+--
+
+INSERT INTO `estudiante` (`rut`, `nombre`, `Apellido`, `facultad`, `carrera`) VALUES
+('21.240.437-3', 'ricardo ', 'lopez', 'ingeneria', 'ingeneria civil informatica');
 
 -- --------------------------------------------------------
 
