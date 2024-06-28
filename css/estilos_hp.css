@@ -15,4 +15,13 @@ h2{
 #formulario,#buscar_libro{
     width: 50%;
 }
-
+#formulario_f{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#buscar_libro_f{
+    display: flex;
+}
+#buscar_libro_f button{
+    margin-left: 5px;
+}

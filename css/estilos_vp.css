@@ -12,3 +12,10 @@ body{
 #confirmar_prestamo,#vtn_prestamo{
     width: 50%;
 }
+#confirmar,#vtn_prestamo_form,#eliminar_prestamo{
+    display: flex;
+}
+
+#confirmar button,#buscar_prestamo button,#eliminar_prestamo button,#prestamo button{
+    margin-left: 5px;
+}

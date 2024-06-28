@@ -8,20 +8,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h2>Hacer Prestamo</h2>
     <div class="menu">
         <div id="formulario">
+            <h2>Hacer Prestamo</h2>
 
             <form action="cons_hacer_prestamo/prestamo.php" method="post" id = "hacer_prestamo">
+                <div id= "formulario_f">
                 <label for="rut">Rut: </label>
                 <input type="text" id="rut" name="rut">
-                <br>
+                </div>
+                <div id= "formulario_f">
                 <label for="fecha">seleccionar plazo maximo: </label>
                 <input type="date" id="fecha" name="fecha">
-                <br>
+                 </div>
+                <div id= "formulario_f">
                 <label for="id_ejemplar">Ingresar id del ejemplar: </label>
                 <input type="text" id="id_ejemplar" name="id_ejemplar">
-                <br>
+                </div>
                 <button type ="submit">Hacer prestamo</button>
 
 
@@ -30,16 +33,17 @@
         </div>
         <div id = "buscar_libro">
             <h2>Seleccionar Libro</h2>
-            <form action="cons_hacer_prestamo/buscar_libro.php" id = "bs_libro">
-                <label for="Buscar">Ingresar titulo</label>
-                <input type="text" name = "titulo">
-                <button type= "submit">Buscar</button>
-            </form>
+            <div id = "buscar_libro_f">
+                <form action="cons_hacer_prestamo/buscar_libro.php" id = "bs_libro">
+                    <label for="Buscar">Ingresar titulo</label>
+                    <input type="text" name = "titulo">
+                    <button type= "submit">Buscar</button>
+                </form>
 
-            <form action="cons_hacer_prestamo/m_t_libros.php" id = "m_libros">
-                <button type= "submit">Mostrar Disponibles</button>
-            </form>
-
+                <form action="cons_hacer_prestamo/m_t_libros.php" id = "m_libros">
+                    <button type= "submit">Mostrar Disponibles</button>
+                </form>
+            </div>
             <div id="resultado2"> </div>
         </div>
 
