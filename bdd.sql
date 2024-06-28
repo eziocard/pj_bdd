@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2024 a las 00:51:28
+-- Tiempo de generación: 28-06-2024 a las 09:15:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -27,6 +27,9 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `crearEstudiante` (`nRut` VARCHAR(30), `nNombre` VARCHAR(30), `nApellido` VARCHAR(30), `nFacultad` VARCHAR(30), `nCarrera` VARCHAR(30))   Insert into estudiante (rut,nombre,apellido,facultad,carrera)
 VALUES (nRut,nNombre,nApellido,nFacultad,nCarrera)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `crearPrestamo` (IN `rut` VARCHAR(30), IN `fecha_prevista` DATE, IN `id_ejemplar` VARCHAR(30))   insert into prestamo (id_ejemplar,rut ,fecha_prestamo,fecha_devolucion,fecha_prevista)
+values (id_ejemplar,rut,CURRENT_DATE,NULL,fecha_prevista)$$
 
 DELIMITER ;
 
@@ -260,7 +263,7 @@ INSERT INTO `editorial` (`id_editorial`, `Nombre`) VALUES
 --
 
 CREATE TABLE `ejemplar` (
-  `id_ejemplar` varchar(30) DEFAULT NULL,
+  `id_ejemplar` varchar(30) NOT NULL,
   `isbn` varchar(30) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `estado` varchar(30) DEFAULT NULL
@@ -272,7 +275,7 @@ CREATE TABLE `ejemplar` (
 
 INSERT INTO `ejemplar` (`id_ejemplar`, `isbn`, `precio`, `estado`) VALUES
 ('J001', '978-3-16-148410-0', 5000, 'Disponible'),
-('J002', '978-1-56619-909-4', 4500, 'Prestado'),
+('J002', '978-1-56619-909-4', 4500, 'Disponible'),
 ('J003', '978-0-262-13472-9', 7000, 'Disponible'),
 ('J004', '978-0-395-19395-8', 3000, 'Disponible'),
 ('J005', '978-0-307-40646-3', 6000, 'Disponible'),
@@ -379,7 +382,7 @@ INSERT INTO `ejemplar` (`id_ejemplar`, `isbn`, `precio`, `estado`) VALUES
 --
 
 CREATE TABLE `estudiante` (
-  `rut` varchar(30) DEFAULT NULL,
+  `rut` varchar(30) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
   `Apellido` varchar(30) NOT NULL,
   `facultad` varchar(30) DEFAULT NULL,
@@ -391,6 +394,7 @@ CREATE TABLE `estudiante` (
 --
 
 INSERT INTO `estudiante` (`rut`, `nombre`, `Apellido`, `facultad`, `carrera`) VALUES
+('12.334.240-2', 'juan', 'lopez', 'ingeneria', 'ingeneria civil informatica'),
 ('21.240.437-3', 'ricardo ', 'lopez', 'ingeneria', 'ingeneria civil informatica');
 
 -- --------------------------------------------------------
@@ -518,6 +522,30 @@ CREATE TABLE `prestamo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Disparadores `prestamo`
+--
+DELIMITER $$
+CREATE TRIGGER `Eliminacion_EstadoEjemplar` BEFORE DELETE ON `prestamo` FOR EACH ROW BEGIN 
+    UPDATE ejemplar SET estado = 'Disponible' WHERE id_ejemplar = OLD.id_ejemplar;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ejemplar_Disponible` AFTER UPDATE ON `prestamo` FOR EACH ROW BEGIN
+    IF NEW.fecha_devolucion IS NOT NULL THEN
+        UPDATE ejemplar SET estado = 'Disponible' WHERE id_ejemplar = NEW.id_ejemplar;
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ejemplar_Prestado` AFTER INSERT ON `prestamo` FOR EACH ROW BEGIN 
+    UPDATE ejemplar SET estado = 'Prestado' WHERE id_ejemplar = NEW.id_ejemplar;
+END
+$$
+DELIMITER ;
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -537,6 +565,7 @@ ALTER TABLE `editorial`
 -- Indices de la tabla `ejemplar`
 --
 ALTER TABLE `ejemplar`
+  ADD PRIMARY KEY (`id_ejemplar`),
   ADD KEY `Pk` (`id_ejemplar`),
   ADD KEY `Fk` (`isbn`);
 
@@ -544,6 +573,7 @@ ALTER TABLE `ejemplar`
 -- Indices de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
+  ADD PRIMARY KEY (`rut`),
   ADD KEY `Pk` (`rut`);
 
 --
@@ -569,7 +599,7 @@ ALTER TABLE `prestamo`
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- Restricciones para tablas volcadas
