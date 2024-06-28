@@ -3,52 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="./css/estilos_vp.css">
+    <link rel="stylesheet" href="./css/estilos_vp.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     
     <div class="menu">
-        <div id="confirmar">
+        <div id="confirmar_prestamo">
             <h2>Confirmar entrega</h2>
-            <form action="">
-                <label for="Id_prestamo">Id prestamo: </label>
-               <input type="int" id="Id_prestamo" name="id_prestamo">
+            <form action="/cons_ver_prest/confirmar_ent.php" id="confirmar">
+                <label for="id_prestamo">Id prestamo: </label>
+               <input type="text" id="id_prestamo_confirmar" name="id_prestamo">
                <br>
-               <button type ="submit">Ingresar</button>
+               <button type="submit">Confirmar</button>
            </form>
+           <div id="resultado1"></div>
 
         </div>
-        <div id = "vtn_prestamo">
+        <div id="vtn_prestamo">
             <h2>Buscar Prestamo</h2>
-            <form action="">
-                <label for = "id_prestamo">Buscar id prestamo</label>
-                <input type="int" id = "id_prestamo" name = "id_prestamo">
-                <button>Buscar</button>
+            <form action="/cons_ver_prest/buscar_prestamo.php" id="buscar_prestamo">
+                <label for="id_prestamo_buscar">Buscar id prestamo</label>
+                <input type="text" id="id_prestamo_buscar" name="id_prestamo">
+                <button type="submit">Buscar</button>
             </form>
-            <form action="cons_ver_prest/mt_prestamo.php" id = prestamo>
-                <button type ="submit">Mostrar Todo</button>
+            <form action="cons_ver_prest/mt_prestamo.php" id="prestamo">
+                <button type="submit">Mostrar Todo</button>
             </form>
-            <div id = resultado2></div>
+            <div id="resultado2"></div>
+
+        </div>
+        <br>
+        <div id="eliminar">
+            <h2>Eliminar Prestamo</h2>
+            <form action="cons_ver_prest/eliminar.php" id="eliminar_prestamo">
+                <label for="id_prestamo_eliminar">Id Prestamo: </label>
+               <input type="text" id="id_prestamo_eliminar" name="id_prestamo">
+               <br>
+               <button type="submit">Eliminar</button>
+           </form>
+           <div id="resultado3"></div>
 
         </div>
         <script>
             $(function() {
-               $('#prestamo').submit(function(e) {
-                   e.preventDefault(); 
-                   var datos = $(this).serialize();
-                   $.ajax({
-                       type: 'POST',
-                       url: 'cons_ver_prest/mt_prestamo.php', 
-                       data: datos,
-                       success: function(response) {
-                           $('#resultado2').html(response); 
-                       }
-                   });
-               });
-           });
-        </script>
+                $('#prestamo').submit(function(e) {
+                    e.preventDefault();
+                    var datos = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'cons_ver_prest/mt_prestamo.php',
+                        data: datos,
+                        success: function(response) {
+                            $('#resultado2').html(response);
+                        }
+                    });
+                });
+            
+                $('#buscar_prestamo').submit(function(e) {
+                    e.preventDefault();
+                    var id_prestamo = $('#id_prestamo_buscar').val().trim();
+                    if (id_prestamo === '') {
+                        alert('Por favor ingresa el id del prestamo');
+                        return;
+                    }
+                    var datos = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'cons_ver_prest/buscar_prestamo.php',
+                        data: datos,
+                        success: function(response) {
+                            $('#resultado2').html(response);
+                        }
+                    });
+                });
 
+                
+                $('#confirmar').submit(function(e) {
+                    e.preventDefault();
+                    var id_prestamo = $('#id_prestamo_confirmar').val().trim();
+                    if (id_prestamo === '') {
+                        alert('Por favor ingresa el id del prestamo');
+                        return;
+                    }
+                    var datos = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'cons_ver_prest/confirmar_ent.php',
+                        data: datos,
+                        success: function(response) {
+                            $('#resultado1').html(response);
+                        }
+                    });
+                });
+
+                $('#eliminar_prestamo').submit(function(e) {
+                    e.preventDefault();
+                    var id_prestamo = $('#id_prestamo_eliminar').val().trim();
+                    if (id_prestamo === '') {
+                        alert('Por favor ingresa el id del prestamo');
+                        return;
+                    }
+                    var datos = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'cons_ver_prest/eliminar.php',
+                        data: datos,
+                        success: function(response) {
+                            $('#resultado3').html(response);
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
-    </html>  
+    </html>

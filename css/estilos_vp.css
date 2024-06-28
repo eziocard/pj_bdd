@@ -9,6 +9,6 @@ body{
 .menu{
     display: flex;
 }
-#confirmar,#vtn_prestamo{
+#confirmar_prestamo,#vtn_prestamo{
     width: 50%;
 }
