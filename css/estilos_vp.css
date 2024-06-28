@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    font: 100 14px 'inter', sans-serif;
+}
+.menu{
+    display: flex;
+}
+#confirmar,#vtn_prestamo{
+    width: 50%;
+}

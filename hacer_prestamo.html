@@ -12,9 +12,9 @@
     <div class="menu">
         <div id="formulario">
 
-            <form action="/cons_hacer_prestamo/prestamo.php" method="post" id = "hacer_prestamo">
+            <form action="cons_hacer_prestamo/prestamo.php" method="post" id = "hacer_prestamo">
                 <label for="rut">Rut: </label>
-                <input type="rut" id="rut" name="rut">
+                <input type="text" id="rut" name="rut">
                 <br>
                 <label for="fecha">seleccionar plazo maximo: </label>
                 <input type="date" id="fecha" name="fecha">
@@ -22,24 +22,25 @@
                 <label for="id_ejemplar">Ingresar id del ejemplar: </label>
                 <input type="text" id="id_ejemplar" name="id_ejemplar">
                 <br>
-                <button>Hacer prestamo</button>
+                <button type ="submit">Hacer prestamo</button>
 
 
               </form>
+            <div id = "resultado1"></div>
         </div>
         <div id = "buscar_libro">
             <h2>Seleccionar Libro</h2>
             <form action="cons_hacer_prestamo/buscar_libro.php" id = "bs_libro">
                 <label for="Buscar">Ingresar titulo</label>
                 <input type="text" name = "titulo">
-                <button>Buscar</button>
+                <button type= "submit">Buscar</button>
             </form>
 
             <form action="cons_hacer_prestamo/m_t_libros.php" id = "m_libros">
-                <button>Mostrar Disponibles</button>
+                <button type= "submit">Mostrar Disponibles</button>
             </form>
 
-            <div id="resultado"> </div>
+            <div id="resultado2"> </div>
         </div>
 
         <script>
@@ -52,7 +53,7 @@
                         url: 'cons_hacer_prestamo/m_t_libros.php', 
                         data: datos,
                         success: function(response) {
-                            $('#resultado').html(response); 
+                            $('#resultado2').html(response); 
                         }
                     });
                 });
@@ -73,7 +74,7 @@
                     url: 'cons_hacer_prestamo/buscar_libro.php',
                     data: datos,
                     success: function(response) {
-                        $('#resultado').html(response);
+                        $('#resultado2').html(response);
                     }
                 });
             });
@@ -83,8 +84,11 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '/cons_hacer_prestamo/prestamo.php',
+                    url: 'cons_hacer_prestamo/prestamo.php',
                     data: datos,
+                    success: function(response) {
+                        $('#resultado1').html(response);
+                    }
                 });
             });
         </script>

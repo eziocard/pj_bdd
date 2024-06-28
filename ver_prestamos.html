@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="./css/estilos_vp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="menu">
+        <div id="confirmar">
+            <h2>Confirmar entrega</h2>
+            <form action="">
+                <label for="Id_prestamo">Id prestamo: </label>
+               <input type="int" id="Id_prestamo" name="id_prestamo">
+               <br>
+               <button type ="submit">Ingresar</button>
+           </form>
+
+        </div>
+        <div id = "vtn_prestamo">
+            <h2>Buscar Prestamo</h2>
+            <form action="">
+                <label for = "id_prestamo">Buscar id prestamo</label>
+                <input type="int" id = "id_prestamo" name = "id_prestamo">
+                <button>Buscar</button>
+            </form>
+            <form action="cons_ver_prest/mt_prestamo.php" id = prestamo>
+                <button type ="submit">Mostrar Todo</button>
+            </form>
+            <div id = resultado2></div>
+
+        </div>
+        <script>
+            $(function() {
+               $('#prestamo').submit(function(e) {
+                   e.preventDefault(); 
+                   var datos = $(this).serialize();
+                   $.ajax({
+                       type: 'POST',
+                       url: 'cons_ver_prest/mt_prestamo.php', 
+                       data: datos,
+                       success: function(response) {
+                           $('#resultado2').html(response); 
+                       }
+                   });
+               });
+           });
+        </script>
+
+    </body>
+    </html>  
